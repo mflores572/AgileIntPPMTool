@@ -3,23 +3,37 @@ package io.agileintelligence.ppmtool.domain;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Project {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotBlank(message = "Project name is requied")
 	private String projectName;
+	@NotBlank(message = "Project Identifier is requied")
+	@Size(min = 4, max = 5, message = "Please use 4 to 5 characters")
+	@Column(updatable = false, unique = true)
 	private String projectIdentifier;
+	@NotBlank(message="Project description is requied")
 	private String description;
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date start_date;
-	
+	@JsonFormat(pattern = "yyyy-mm-dd")
+	private Date end_date;
+
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date created_At;
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date updated_At;
-	
+
 	public Project() {
-		
+
 	}
 
 	public Long getId() {
@@ -61,6 +75,14 @@ public class Project {
 	public void setStart_date(Date start_date) {
 		this.start_date = start_date;
 	}
+	
+	public Date getEnd_date() {
+		return end_date;
+	}
+
+	public void setEnd_date(Date end_date) {
+		this.end_date = end_date;
+	}
 
 	public Date getCreated_At() {
 		return created_At;
@@ -77,12 +99,12 @@ public class Project {
 	public void setUpdated_At(Date updated_At) {
 		this.updated_At = updated_At;
 	}
-	
+
 	@PrePersist
-	protected void onCreate(){
-		this.created_At = new Date();		
+	protected void onCreate() {
+		this.created_At = new Date();
 	}
-	
+
 	@PreUpdate
 	protected void onUpdate() {
 		this.updated_At = new Date();
