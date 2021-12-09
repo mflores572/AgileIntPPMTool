@@ -32,7 +32,6 @@ class AddProject extends Component {
 
     console.log(newProject);
   }
-
   render() {
     return (
       <div>
