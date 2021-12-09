@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="dark-overlay">
+          <div className="App dark-overlay">
             <Header />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/addProject" component={AddProject} />

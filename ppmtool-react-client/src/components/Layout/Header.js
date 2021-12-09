@@ -3,11 +3,16 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-scrummaster mb-4">
         <div className="container">
-          <a className="navbar-brand" href="Dashboard.html">
-            Personal Project Management Tool
+          <a className="scrumFancyFont" href="Dashboard.html">
+            Ez Scrum Ez Go
+            <h1 className="navbar-brand scrumMainFont ">
+              {" "}
+              Project Management Tool
+            </h1>
           </a>
+          <h1></h1>
           <button
             className="navbar-toggler"
             type="button"

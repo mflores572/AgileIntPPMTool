@@ -4,12 +4,12 @@ class ProjectItem extends Component {
   render() {
     return (
       <div className="container">
-        <div className="card card-body bg-light mb-3">
+        <div className="card card-body bg-scrummaster mb-3">
           <div className="row">
             <div className="col-2">
-              <span className="mx-auto">REACT</span>
+              <span className="mx-auto scrumFancyFont">REACT</span>
             </div>
-            <div className="col-lg-6 col-md-4 col-8">
+            <div className="col-lg-6 col-md-4 col-8 scrumMainFont">
               <h3>Spring / React Project</h3>
               <p>Project to create a Kanban Board with Spring Boot and React</p>
             </div>
