@@ -108,7 +108,7 @@ class AddProject extends Component {
                       </div>
                     )}
                   </div>
-                  <h6>Start Date</h6>
+                  <h6 className="scrumMainFont">Start Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
@@ -118,7 +118,7 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     />
                   </div>
-                  <h6>Estimated End Date</h6>
+                  <h6 className="scrumMainFont">Estimated End Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
