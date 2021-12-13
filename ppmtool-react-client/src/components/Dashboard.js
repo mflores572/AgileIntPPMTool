@@ -9,20 +9,22 @@ class Dashboard extends Component {
   componentDidMount() {
     this.props.getProjects();
   }
-
   render() {
+    const { projects } = this.props.project;
     return (
       <div className="projects">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4 text-center scrumMainFont">Projects</h1>
+              <h1 className="display-4 text-center srumMainFont">Projects</h1>
               <br />
               <CreateProjectButton />
 
               <br />
               <hr />
-              <ProjectItem />
+              {projects.map((project) => (
+                <ProjectItem key={project.id} project={project} />
+              ))}
             </div>
           </div>
         </div>
@@ -40,4 +42,4 @@ const mapStateToProps = (state) => ({
   project: state.project,
 });
 
-export default connect(null, { getProjects })(Dashboard);
+export default connect(mapStateToProps, { getProjects })(Dashboard);
