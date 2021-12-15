@@ -1,5 +1,8 @@
 package io.agileintelligence.ppmtool.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,6 +23,8 @@ public class Backlog {
 	private Project project;
 	
 	//OneToMany projectTasks
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "backlog")
+	private List<ProjectTask> projectTasks = new ArrayList<>();
 	
 	public Backlog() {
 	}
@@ -54,6 +59,14 @@ public class Backlog {
 
 	public void setProject(Project project) {
 		this.project = project;
+	}
+
+	public List<ProjectTask> getProjectTasks() {
+		return projectTasks;
+	}
+
+	public void setProjectTasks(List<ProjectTask> projectTasks) {
+		this.projectTasks = projectTasks;
 	}
 
 }
