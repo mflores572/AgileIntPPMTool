@@ -96,7 +96,7 @@ class AddProjectTask extends Component {
                     onChange={this.onChange}
                   ></textarea>
                 </div>
-                <h6>Due Date</h6>
+                <h6 className="scrumMainFont">Due Date</h6>
                 <div className="form-group">
                   <input
                     type="date"
